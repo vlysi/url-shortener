@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <h1 class="display-5 text-center">Free URL Shortener</h1>
+  <p class="text-center">Paste your long URL into the field, and the service will provide you with a shorter version.</p>
+  <div class="row mt-5">
+    <div class="col-lg-9">
+      <input type="text" [(ngModel)]="longUrl" class="form-control form-control-lg" placeholder="Paste a long URL">
+    </div>
+    <div class="col-lg-3">
+      <button (click)="processUrl()" class="btn btn-primary btn-block btn-lg">Shorten link</button>
+    </div>
+  </div>
+  <div *ngIf="urlProcessed" class="row mt-5">
+    <div class="col-lg-9">
+      <input type="text" [(ngModel)]="urlShort" class="form-control form-control-lg">
+    </div>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
